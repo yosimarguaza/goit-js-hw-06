@@ -1,14 +1,11 @@
-const nameInput = document.getElementById('name-input');
-const nameOutput = document.getElementById('name-output');
+const inputTexto = document.querySelector("#name-input");
+const outputTexto = document.querySelector("#name-output");
+inputTexto.addEventListener("input", writeSpan);
 
-nameInput.addEventListener('input', function(){  //'change', (e) => {}
-    //nameInput.textContent = e.target.value;
- 
-
-  // Verifica si el campo de entrada está vacío
-  if (nameInput === '') {
-    nameOutput.textContent = 'Anonymous';
+function writeSpan() {
+  if (inputTexto.value == "") {
+    outputTexto.textContent = "anonimo";
   } else {
-    nameOutput.textContent = nameInput;
+    outputTexto.textContent = inputTexto.value;
   }
-});
+}
